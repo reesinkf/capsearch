@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <form action="message" method="POST">
+
+            <div class="row p-2">
+                <div class="col-1"><label for="name">Name:</label></div>
+                <div class="col-2"><input type="text" name="name" /></div>
+            </div>
+
+            <div class="row p-2">
+                <div class="col-1"><label for="message">Message:</label></div>
+                <div class="col-2"><input type="text" name="message" /></div>
+            </div>
+
+            <div class="row p-2">
+                <div class="offset-1 col-2">
+                    <button type="submit" class="btn btn-block btn-dark">Post</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+{% endblock %}
