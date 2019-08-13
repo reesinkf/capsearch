@@ -1,6 +1,6 @@
 <?php
 
-class WebTest extends PHPUnit_Extensions_Selenium2TestCase {
+class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
 
     /**
      * Function to set up testing configuration
@@ -34,7 +34,8 @@ class WebTest extends PHPUnit_Extensions_Selenium2TestCase {
     }
 
     /**
-     *  A function we can reuse if we want to give the browser time to load
+     *  A function we can use when we want to give the browser time to load
+     *  It only continues when the page header is visible
      */
     public function waitForBrowser() {
         $this->waitUntil(function () {
