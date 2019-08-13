@@ -8,7 +8,7 @@ A demo of how to use PHPUnit and Selenium with a Symfony framework.
 ### Geckodriver
 To use firefox with Selenium you need [GeckoDriver](https://github.com/mozilla/geckodriver/releases):
 ```
-https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
+wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
 tar -xvzf geckodriver*
 chmod +x geckodriver
 sudo mv geckodriver /usr/bin/geckodriver
