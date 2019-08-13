@@ -1,5 +1,19 @@
 <?php
+/**
+ * Testing functions:
+ * testPageOnline()                 Checks if the server is running and the correct page is showing
+ * testPostEmptyForm()              Tests if we can post an empty form and if we get to the right page
+ * testVerifyFieldsAreAvailable()   Tests if all fields are available in the form
+ * testHasWorkingForm()             Actually tests the form and if the printed values are correct
+ * Other:
+ * setUp()                          Basic set up config
+ * inputsProvider()                 Returns an array with our test data, field names and field types
+ * waitForBrowser()                 A function we can call when the browser needs some time
+ */
 
+/**
+ *  Usually in PHPUnit you would extend from PHPUnit_Framework_TestCase but in this case we want to use Selenium
+ */
 class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
 
     /**
