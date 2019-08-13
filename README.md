@@ -4,6 +4,7 @@ A demo of how to use PHPUnit and Selenium with a Symfony framework.
 ## Installation
 - GeckoDriver: This is the firefox driver for selenium
 - Selenium: Browser automation
+- Java: To run Selenium
 
 ### Geckodriver
 To use firefox with Selenium you need [GeckoDriver](https://github.com/mozilla/geckodriver/releases):
@@ -18,10 +19,19 @@ Alternatively you can use [ChromeDriver](https://chromedriver.chromium.org/) if 
 ### Selenium
 Selenium 3.9 has an annoying bug, please download [Selenium 3.8.1](https://selenium-release.storage.googleapis.com/3.8/selenium-server-standalone-3.8.1.jar).
 
+### Java
+Check if you have java installed:
+```
+java --version
+```
+If not:
+```
+sudo apt install default-jre
+```
 ### Symfony
 After cloning the repo, install all the packages:
 ```
-composer install
+git clone https://github.com/reesinkf/capsearch.git && cd capsearch;composer install
 ```
 
 ## Usage 
@@ -39,7 +49,7 @@ php bin/console server:run
 
 #### Run the tests
 ```
-bin/phpunit
+vendor/bin/phpunit
 ```
 By default it will go through all available tests in the tests file, so no need to specify a certain file.
 
