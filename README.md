@@ -16,7 +16,7 @@ sudo mv geckodriver /usr/bin/geckodriver
 Alternatively you can use [ChromeDriver](https://chromedriver.chromium.org/) if you prefer to use Chrome.
 
 ### Selenium
-Selenium 3.9 has a annoying bug, please download [Selenium 3.8.1](https://selenium-release.storage.googleapis.com/3.8/selenium-server-standalone-3.8.1.jar).
+Selenium 3.9 has an annoying bug, please download [Selenium 3.8.1](https://selenium-release.storage.googleapis.com/3.8/selenium-server-standalone-3.8.1.jar).
 
 ### Symfony
 After cloning the repo, install all the packages:
