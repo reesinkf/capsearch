@@ -9,18 +9,44 @@
         <form action="message" method="POST">
 
             <div class="row p-2">
-                <div class="col-1"><label for="name">Name:</label></div>
-                <div class="col-2"><input type="text" name="name" /></div>
+                <div class="col-2"><label for="name">Name:</label></div>
+                <div class="col-2"><input type="text" name="name"></div>
             </div>
 
             <div class="row p-2">
-                <div class="col-1"><label for="message">Message:</label></div>
+                <div class="col-2"><label for="name">Gender:</label></div>
+                <div class="col-2">
+                    <input type="radio" name="gender" value="male"> Male
+                    &nbsp;
+                    <input type="radio" name="gender" value="female"> Female
+                </div>
+            </div>
+
+
+            <div class="row p-2">
+                <div class="offset-2 col-2"><input type="checkbox" name="over18"> I am over 18</div>
+            </div>
+
+            <div class="row p-2">
+                <div class="col-2"><label for="car">Car</label></div>
+                <div class="col-2">
+                    <select name="car">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row p-2">
+                <div class="col-2"><label for="message">Message:</label></div>
                 <div class="col-2"><input type="text" name="message" /></div>
             </div>
 
             <div class="row p-2">
-                <div class="offset-1 col-2">
-                    <button type="submit" class="btn btn-block btn-dark">Post</button>
+                <div class="offset-1 col-3">
+                    <button type="submit" id="post" class="btn btn-block btn-dark">Post</button>
                 </div>
             </div>
 
