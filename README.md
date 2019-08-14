@@ -56,7 +56,7 @@ php bin/console server:run
 ```
 vendor/bin/phpunit
 ```
-By default it will go through all available tests in the tests file, so no need to specify a certain file.
+By default it will go through all available tests in the tests directory.
 
 ![image](https://user-images.githubusercontent.com/3394637/62924993-9ea53900-bdb1-11e9-9495-b699d9a08e88.png)
 
