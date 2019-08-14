@@ -40,7 +40,7 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
         // It looks a bit ridiculous but a data provider has to be an array with an array...
         return [[[
             ['field'=>'input',      'id'=>'form_name',     'value'=>'Frans'],
-            ['field'=>'radio',      'id'=>'form_gender',   'value'=>'Male'],
+            ['field'=>'select',     'id'=>'form_gender',   'value'=>'Male'],
             ['field'=>'checkbox',   'id'=>'form_over18',   'value'=>'1'],
             ['field'=>'select',     'id'=>'form_car',      'value'=>'Saab'],
             ['field'=>'input',      'id'=>'form_message',  'value'=>'Just testing!']
