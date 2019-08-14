@@ -131,13 +131,6 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
                     // A checkbox requires a click if the value is '1'
                     if ($input['value'] === '1') $this->byId($input['id'])->click();
                 break;
-                case 'radio':
-                    // For a radio button it's a little more complicated
-                    // There's no easy way to get ALL elements of a certain type in PHPUnit (when extending from selenium...)
-                    // The only way I found to work:
-                    $radio = $this->element($this->using('css selector')->value('*[value="'.$input['value'].'"]'));
-                    $radio->click();
-                break;
             }
         }
 
