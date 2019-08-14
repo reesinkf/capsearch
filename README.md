@@ -1,6 +1,11 @@
 # PHPUnit + Selenium Demo
 A demo of how to use PHPUnit and Selenium with a Symfony 4 framework on Ubuntu.
 
+## Relevant files
+
+- [Functional tests](https://github.com/reesinkf/capsearch/blob/master/tests/FormTest.php)
+- [Controller with form](https://github.com/reesinkf/capsearch/blob/master/src/Controller/HomeController.php)
+
 ## Installation
 - GeckoDriver: This is the firefox driver for selenium
 - Selenium: Browser automation
