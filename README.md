@@ -47,7 +47,7 @@ java -jar selenium-server-standalone-3.8.1.jar -enablePassThrough false
 ```
 Make sure to start Selenium inside a window system (not a remote terminal) so it can spawn a browser window.
 
-#### Start Symfony web listener
+#### Start Symfony dev server
 ```
 php bin/console server:run
 ```
