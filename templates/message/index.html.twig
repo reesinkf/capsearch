@@ -3,28 +3,32 @@
 {% block body %}
 
     <div class="row">
+        <div class="col-5 font-weight-bold"><h6>Data posted!</h6><hr></div>
+    </div>
+
+    <div class="row">
         <div class="col-1 font-weight-bold">Name: </div>
-        <div class="col-4" id="name">{{ name }}</div>
+        <div class="col-4" id="form_name">{{ name }}</div>
     </div>
 
     <div class="row">
         <div class="col-1 font-weight-bold">Gender: </div>
-        <div class="col-4" id="gender">{{ gender }}</div>
+        <div class="col-4" id="form_gender">{{ gender }}</div>
     </div>
 
     <div class="row">
         <div class="col-1 font-weight-bold">Over 18: </div>
-        <div class="col-4" id="over18">{{ over18 }}</div>
+        <div class="col-4" id="form_over18">{{ over18 }}</div>
     </div>
 
     <div class="row">
         <div class="col-1 font-weight-bold">Car: </div>
-        <div class="col-4" id="car">{{ car }}</div>
+        <div class="col-4" id="form_car">{{ car }}</div>
     </div>
 
     <div class="row">
         <div class="col-1 font-weight-bold">Message: </div>
-        <div class="col-4" id="message">{{ message }}</div>
+        <div class="col-4" id="form_message">{{ message }}</div>
     </div>
 
 {% endblock %}

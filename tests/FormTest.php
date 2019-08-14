@@ -31,7 +31,7 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
      * It returns an array with arrays with everything we need to enter values into the correct fields
      * and to verify them later
      *  [ [ field => field type,
-     *      name => name of field,
+     *      id => id of field,
      *      value => value inside field  ],
      *  ...]
      * @return array
@@ -39,11 +39,11 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
     public function inputsProvider(): array {
         // It looks a bit ridiculous but a data provider has to be an array with an array...
         return [[[
-            ['field'=>'input',      'name'=>'name',     'value'=>'Frans'],
-            ['field'=>'radio',      'name'=>'gender',   'value'=>'female'],
-            ['field'=>'checkbox',   'name'=>'over18',   'value'=>'on'],
-            ['field'=>'select',     'name'=>'car',      'value'=>'saab'],
-            ['field'=>'input',      'name'=>'message',  'value'=>'Just testing!']
+            ['field'=>'input',      'id'=>'form_name',     'value'=>'Frans'],
+            ['field'=>'radio',      'id'=>'form_gender',   'value'=>'Male'],
+            ['field'=>'checkbox',   'id'=>'form_over18',   'value'=>'1'],
+            ['field'=>'select',     'id'=>'form_car',      'value'=>'Saab'],
+            ['field'=>'input',      'id'=>'form_message',  'value'=>'Just testing!']
         ]]];
     }
 
@@ -63,35 +63,35 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
     }
 
     /**
-     * First test will simply check if the server is running and if its showing the
-     * correct page (index should have a specific title)
+     * The first test will simply check if the page is available by
+     * checking what the header (h3) says
      */
-    public function testPageOnline() {
+    public function testPageIsAvailable() {
         // Go to the index
         $this->url('/index.php');
-        // Check if the title is "Home page"
-        $this->assertEquals('Home page', $this->title());
+        // Check if the header says "Capsearch Selenium/PHPUnit Test"
+        $header = $this->byCssSelector('h3')->text();
+        $this->assertEquals($header, 'Capsearch Selenium/PHPUnit Test');
         // The 'assert' is essentially the test,
         // without an assert the test is incomplete (phpunit will give a warning)
     }
 
     /**
-     * With this test we simply verify the post form actually works
-     * by clicking the post button (with an empty form)
+     * With this test we make sure the form works by clicking the Post button
+     * We're ignoring all the input boxes for now
      * @dataProvider inputsProvider
      * @param array $inputs
      */
-    public function testPostEmptyForm(array $inputs) {
+    public function testFormPost(array $inputs) {
         // Go to the index
         $this->url('/index.php');
         // Test submit
-        $this->byId('post')->submit();
+        $this->byId('form_save')->submit();
         // Give the browser time to post
         $this->waitForBrowser();
-        // On the new page, we should have an empty Name: field
-        $this->assertEquals('', $this->byId($inputs[0]['name'])->text());
-        // ^ You can use any random field here as they should all be empty because
-        // we didn't enter anything into the form (except car which has a default)
+        // Now we should see "Data posted!"
+        $page = $this->byCssSelector('h6')->text();
+        $this->assertEquals($page, "Data posted!");
     }
 
     /**
@@ -105,7 +105,7 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
         // Just loop through all fields
         foreach($inputs as $input) {
             // Check if the field is enabled (to verify it exists)
-            $this->assertTrue($this->byName($input['name'])->enabled());
+            $this->assertTrue($this->byId($input['id'])->enabled());
         }
     }
 
@@ -125,11 +125,11 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
                 case 'input':
                 case 'select':
                     // The select box and input box works the same so we can enter the value for them both
-                    $this->byName($input['name'])->value($input['value']);
+                    $this->byId($input['id'])->value($input['value']);
                 break;
                 case 'checkbox':
-                    // A checkbox requires a click if the value is supposed to be 'on'
-                    if ($input['value'] === 'on') $this->byName($input['name'])->click();
+                    // A checkbox requires a click if the value is '1'
+                    if ($input['value'] === '1') $this->byId($input['id'])->click();
                 break;
                 case 'radio':
                     // For a radio button it's a little more complicated
@@ -142,13 +142,13 @@ class FormTest extends PHPUnit_Extensions_Selenium2TestCase {
         }
 
         // Now we're ready to submit
-        $this->byId('post')->submit();
+        $this->byId('form_save')->submit();
         $this->waitForBrowser();
 
         // Let's see if all the values carried over correctly on the new page
         foreach($inputs as $input) {
             // Get the returned values from each part of the content, for each field
-            $text = $this->byId($input['name'])->text();
+            $text = $this->byId($input['id'])->text();
             // Make sure the values are the same
             $this->assertEquals($text, $input['value']);
         }

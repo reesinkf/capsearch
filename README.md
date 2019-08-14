@@ -1,5 +1,5 @@
 # PHPUnit + Selenium Demo
-A demo of how to use PHPUnit and Selenium with a Symfony framework.
+A demo of how to use PHPUnit and Selenium with a Symfony 4 framework on Ubuntu.
 
 ## Installation
 - GeckoDriver: This is the firefox driver for selenium
@@ -56,8 +56,7 @@ By default it will go through all available tests in the tests file, so no need 
 ![image](https://user-images.githubusercontent.com/3394637/62924993-9ea53900-bdb1-11e9-9495-b699d9a08e88.png)
 
 ### Versions 
-I used to following versions while developing:
-
+I used to following versions while developing with [PhpStorm 2019.1](https://www.jetbrains.com/phpstorm/):
 - Selenium 3.8.1
 - Geckodriver 0.24
 - Firefox 68.0.1
@@ -65,3 +64,5 @@ I used to following versions while developing:
 - PHPUnit 7.5.14
 - Symfony 4.3.3
 - Ubuntu 18
+
+
