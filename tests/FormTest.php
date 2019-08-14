@@ -1,13 +1,13 @@
 <?php
 /**
  * Testing functions:
- * testPageOnline()                 Checks if the server is running and the correct page is showing
- * testPostEmptyForm()              Tests if we can post an empty form and if we get to the right page
+ * testPageIsAvailable()            Checks if the server is running and the correct page is showing
+ * testFormPost()                   Tests if we the form submit works properly
  * testVerifyFieldsAreAvailable()   Tests if all fields are available in the form
  * testHasWorkingForm()             Actually tests the form and if the printed values are correct
  * Other:
  * setUp()                          Basic set up config
- * inputsProvider()                 Returns an array with our test data, field names and field types
+ * inputsProvider()                 Returns an array with our test data, field id's and field types
  * waitForBrowser()                 A function we can call when the browser needs some time
  */
 
