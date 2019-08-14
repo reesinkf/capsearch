@@ -18,14 +18,9 @@ class HomeController extends AbstractController
     public function index(Request $request) {
 
         $form = $this->createFormBuilder([])
-            ->add('name', TextType::class,
-                ['label' => 'Name'])
-            ->add('gender', TextType::class,
-                ['label' => 'Gender'])
-            ->add('over18', CheckboxType::class,
-                [ 'label' => 'I am over 18',
-                'required' => false
-                ])
+            ->add('name', TextType::class, ['label' => 'Name'])
+            ->add('gender', TextType::class, ['label' => 'Gender'])
+            ->add('over18', CheckboxType::class, ['label' => 'I am over 18', 'required' => false])
             ->add('gender', ChoiceType::class, [
                 'choices'  => [
                     'Male' => "Male",
@@ -38,10 +33,8 @@ class HomeController extends AbstractController
                     'Saab' => "Saab",
                     'Ford' => "Ford"]
             ])
-            ->add('message', TextType::class,
-                ['label' => 'Message'])
-            ->add('save', SubmitType::class,
-                ['label' => 'Post'])
+            ->add('message', TextType::class, ['label' => 'Message'])
+            ->add('save', SubmitType::class, ['label' => 'Post'])
             ->getForm();
 
         $form->handleRequest($request);
